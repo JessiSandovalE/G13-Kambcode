@@ -1,6 +1,8 @@
-// Script para mostrar los números del 1 al 50 en la consola
+// for (let numero = 1; numero <= 50; numero++) {
+//     console.log(numero);
+// }
 
-for (let numero = 1; numero <= 50; numero++) {
+
+for (let numero = 1; numero <= 2000; numero++) {
     console.log(numero);
 }
-
