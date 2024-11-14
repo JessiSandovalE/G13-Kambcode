@@ -3,7 +3,7 @@
 **Nombre:** Ricardo  
 **Apellido:** Cano  
 **Edad:** 37  
-**Foto:** **![Mi Foto][]**
+**Foto:** **![Mi Foto](/RICARDO_CANO_3156712937/foto.jpg)**
 
 ## Habilidades
 
