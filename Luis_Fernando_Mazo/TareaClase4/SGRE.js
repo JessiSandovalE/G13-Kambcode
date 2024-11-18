@@ -35,8 +35,11 @@ const estudiantes = [
 }
 ];
 
-estudiantes.forEach(estudiante => {
-    if (estudiante.nombre === estudianteConsulta) {            
+let estudianteRegistrado = 0;
+
+estudiantes.forEach(estudiante => {    
+    if (estudiante.nombre === estudianteConsulta) {
+        estudianteRegistrado = 1;            
         let edad = estudiante.edad;
         let promedio = estudiante.promedio;
         let esRegular = estudiante.esRegular;
@@ -57,4 +60,10 @@ estudiantes.forEach(estudiante => {
         evaluador(edad, promedio, esRegular, esBecado);
     }
   });
+
+//Muestra el error si el estudiante no existe
+
+  if(estudianteRegistrado==0){
+    console.log(`Error: El estudiante no existe`)    
+  }
 
