@@ -6,6 +6,7 @@
 <p>Git es un sistema de control de versiones que permite a los desarrolladores llevar un registro de los cambios en sus proyectos y colaborar con otros de manera eficiente. GitHub es una plataforma que permite alojar repositorios Git en la nube, facilitando la colaboración y el acceso a proyectos. En este tutorial, aprenderás a inicializar un repositorio Git en tu máquina local, agregar archivos, realizar commits y subir tus cambios a GitHub.</p>
 
 ---------
+---------
 
 ### Requisitos Previos
 
