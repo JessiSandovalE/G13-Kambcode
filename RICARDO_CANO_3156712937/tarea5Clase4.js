@@ -61,3 +61,5 @@ console.log("Resultado Ejercicio 2:", resultado2);
 
 const resultado3 = !(!true && (false || (false && !true) || (true && !false))) || (false && true);
 console.log("Resultado Ejercicio 3:", resultado3);
+
+
