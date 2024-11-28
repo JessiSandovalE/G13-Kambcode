@@ -80,6 +80,18 @@ const jugadores = [
   },
 ];
 
+function obtenerSelecciones() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (isLogged) {
+        resolve(selecciones);
+      } else {
+        reject("No estás logueado dentro de la app");
+      }
+    }, 2000);
+  });
+}
+
 function obtenerJugadoresPorSeleccion(codigoPais) {
   return new Promise((resolve) => {
     setTimeout(() => {
