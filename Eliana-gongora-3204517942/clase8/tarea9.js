@@ -80,6 +80,9 @@ const jugadores = [
   },
 ];
 
+
+
+
 function obtenerSelecciones() {
     return new Promise((resolve, reject) => {
         setTimeout(() =>{
@@ -113,15 +116,27 @@ function iniciProgrma(){
 selecciones.forEach((selecion)=>{
   console.log(`jugador de ${selecion.nombre}:`);
 
- obtenerJugadoresPorSeleccion(selecciones.codigoPais)
-.then((jugadoresSele)=>{
-  jugadoresSele.forEach((jugadores)=>{
-    console.log(`${jugadores.nombre} ${jugador.apellido}`);
-  });
-}) 
-})
-})
+ const jugadoresSele = jugadores.filter(
+  (jugador) => jugador.codigoPais === selecion.codigoPais);
 
-
+jugadoresSele.forEach((jugador)=>{
+  console.log(`${jugador.nombre} ${jugador.apellido}`);
+});
+});
+})
+.catch((error) => {
+  console.error("error",error);
+});
 }
 iniciProgrma();
+
+
+
+
+
+
+
+
+
+
+
