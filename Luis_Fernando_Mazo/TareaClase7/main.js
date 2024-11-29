@@ -61,8 +61,7 @@ function simularVuelo(ciudadOrigen, ciudadDestino, duracion, callback) {
       callback(ciudadDestino);
     }, duracion);
   }
-  
-  // Función principal para simular el viaje
+    
   function viajar() {
     console.log("Estoy en Bogota");
     
@@ -82,5 +81,5 @@ function simularVuelo(ciudadOrigen, ciudadDestino, duracion, callback) {
     });
   }
   
-  // Llamar a la función principal para iniciar el viaje
+  
   viajar();
