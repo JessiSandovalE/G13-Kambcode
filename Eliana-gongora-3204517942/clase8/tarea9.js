@@ -99,7 +99,9 @@ function obtenerSelecciones() {
 
 function obtenerJugadoresPorSeleccion(codigoPais) {
     return new Promise((resolve) => {
-        setTimeout(() =>{
+
+
+      setTimeout(() =>{
             const jugadr= jugadores.filter(jugador => jugador.codigoPais===codigoPais);
             resolve(jugadr); 
         }, 5000 );
