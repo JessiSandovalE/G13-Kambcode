@@ -1,29 +1,38 @@
 
-async function obtenerPokemons() {
+async function getPokemons() {
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=20";
   try {
-    
-    const respuesta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
-    const data = await respuesta.json();
+    const response = await fetch(url);
+    const data = await response.json();
 
-    
-    let pokemons = data.results.map((pokemon) => ({ name: pokemon.name }));
 
-    
-    const promesas = pokemons.map(async (pokemon) => {
-      const respuestaIndividual = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
-      const datosPokemon = await respuestaIndividual.json();
-      return { ...pokemon, ...datosPokemon };
-    });
-
-    
-    pokemons = await Promise.all(promesas);
-
-    
-    console.log(pokemons);
+    const pokemons = data.results.map(pokemon => ({ name: pokemon.name }));
+    return pokemons;
   } catch (error) {
-    console.error("Error al obtener los Pokémon:", error);
+    console.error("Error al obtener la lista de Pokémon:", error);
   }
 }
 
 
-obtenerPokemons();
+async function getPokemonDetails(pokemon) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return { ...pokemon, ...data }; 
+  } catch (error) {
+    console.error(`Error al obtener detalles de ${pokemon.name}:`, error);
+  }
+}
+
+async function fetchPokemonData() {
+  const pokemons = await getPokemons();
+  const detailedPokemons = await Promise.all(
+    pokemons.map(pokemon => getPokemonDetails(pokemon))
+  );
+
+  console.log(detailedPokemons);
+  return detailedPokemons;
+}
+
+fetchPokemonData();
